@@ -4,9 +4,11 @@
 
 [resource]
 script = ExtResource("1_fsoxb")
-POW = 3
-SNK = 6
-SPD = 2
-CHA = 2
-INT = 1
+data = Dictionary[int, int]({
+0: 3,
+1: 2,
+2: 2,
+3: 1,
+4: 1
+})
 metadata/_custom_type_script = "uid://8mnpkj1dxmlk"
