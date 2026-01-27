@@ -4,9 +4,9 @@
 
 [resource]
 script = ExtResource("1_6uqer")
-POW = 2
-SNK = 2
-SPD = 2
-CHA = 2
-INT = 2
+POW = 7
+SNK = 3
+SPD = 7
+CHA = 1
+INT = 1
 metadata/_custom_type_script = "uid://8mnpkj1dxmlk"

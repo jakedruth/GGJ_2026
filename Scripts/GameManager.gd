@@ -13,7 +13,6 @@ func _ready() -> void:
 	polygon2D.polygon = poly;
 
 	var result = characterStats.get_overlap_area_ratio(questStats)
-	result = questStats.get_overlap_area_ratio(characterStats)
 	print(result);
 
 	pass # Replace with function body.
