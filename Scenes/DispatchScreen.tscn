@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://bqk1no4yxyow4"]
 
 [ext_resource type="Script" uid="uid://uqecodrr4eh6" path="res://Scripts/GameManager.gd" id="1_00nw5"]
+[ext_resource type="Resource" uid="uid://dv56gjovmmehd" path="res://Resources/player_01.tres" id="2_hca7f"]
+[ext_resource type="Resource" uid="uid://l4aqudaqw4mi" path="res://Resources/quest_01.tres" id="3_5n2wf"]
 
-[node name="DispatchScreen" type="Control" unique_id=804978114]
+[node name="DispatchScreen" type="Control" unique_id=804978114 node_paths=PackedStringArray("polygon2D")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -10,6 +12,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_00nw5")
+characterStats = ExtResource("2_hca7f")
+questStats = ExtResource("3_5n2wf")
+polygon2D = NodePath("Polygon2D")
 
 [node name="Label" type="Label" parent="." unique_id=1964267287]
 layout_mode = 1
@@ -26,3 +31,9 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 125
 text = "Hello World"
+
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=1096968410]
+position = Vector2(640, 120)
+rotation = -1.5707964
+scale = Vector2(20, 20)
+polygon = PackedVector2Array(1, 0, 0.31, 0.95, -0.81, 0.59, -0.81, -0.59, 0.31, -0.95)

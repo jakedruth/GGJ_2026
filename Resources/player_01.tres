@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Stats" format=3 uid="uid://dv56gjovmmehd"]
+
+[ext_resource type="Script" uid="uid://8mnpkj1dxmlk" path="res://Scripts/Stats.gd" id="1_fsoxb"]
+
+[resource]
+script = ExtResource("1_fsoxb")
+POW = 3
+SNK = 3
+SPD = 2
+CHA = 1
+INT = 1
+metadata/_custom_type_script = "uid://8mnpkj1dxmlk"
