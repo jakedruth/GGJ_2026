@@ -5,10 +5,10 @@
 [resource]
 script = ExtResource("1_6uqer")
 data = Dictionary[int, int]({
-0: 3,
+0: 6,
 1: 6,
-2: 4,
-3: 2,
-4: 3
+2: 6,
+3: 6,
+4: 6
 })
 metadata/_custom_type_script = "uid://8mnpkj1dxmlk"

@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://ducskejc4sjn" path="res://Resources/stats_icons/speed-icon.png" id="7_fq62k"]
 [ext_resource type="Texture2D" uid="uid://bgmijrjmw4isw" path="res://Resources/stats_icons/charisma-icon.png" id="8_lom48"]
 [ext_resource type="Texture2D" uid="uid://b0mc8a44wvk4x" path="res://Resources/stats_icons/intelligence-icon.png" id="9_htlc1"]
+[ext_resource type="Texture2D" uid="uid://dvxr71hbp4y1e" path="res://Resources/dot_8x8.png" id="10_fq62k"]
 
 [node name="DispatchScreen" type="Control" unique_id=804978114 node_paths=PackedStringArray("questPoly", "teamPoly")]
 layout_mode = 3
@@ -22,8 +23,8 @@ characterStats = ExtResource("2_hca7f")
 questStats = ExtResource("3_5n2wf")
 questPoly = NodePath("TextureRect/QuestPoly")
 teamPoly = NodePath("TextureRect/TeamPoly")
-jitterRate = 0.25
-jitterRange = 0.75
+jitterRate = 0.1
+jitterRange = 0.1
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=387817493]
 layout_mode = 1
@@ -129,6 +130,31 @@ width = 0.2
 default_color = Color(0.99607843, 0.37254903, 0.33333334, 1)
 antialiased = true
 
+[node name="dot_1" type="Sprite2D" parent="TextureRect/QuestPoly" unique_id=214084025]
+modulate = Color(0.99607843, 0.37254903, 0.33333334, 1)
+scale = Vector2(0.063, 0.063)
+texture = ExtResource("10_fq62k")
+
+[node name="dot_2" type="Sprite2D" parent="TextureRect/QuestPoly" unique_id=562157456]
+modulate = Color(0.99607843, 0.37254903, 0.33333334, 1)
+scale = Vector2(0.063, 0.063)
+texture = ExtResource("10_fq62k")
+
+[node name="dot_3" type="Sprite2D" parent="TextureRect/QuestPoly" unique_id=1954043024]
+modulate = Color(0.99607843, 0.37254903, 0.33333334, 1)
+scale = Vector2(0.063, 0.063)
+texture = ExtResource("10_fq62k")
+
+[node name="dot_4" type="Sprite2D" parent="TextureRect/QuestPoly" unique_id=2005786815]
+modulate = Color(0.99607843, 0.37254903, 0.33333334, 1)
+scale = Vector2(0.063, 0.063)
+texture = ExtResource("10_fq62k")
+
+[node name="dot_5" type="Sprite2D" parent="TextureRect/QuestPoly" unique_id=501944248]
+modulate = Color(0.99607843, 0.37254903, 0.33333334, 1)
+scale = Vector2(0.063, 0.063)
+texture = ExtResource("10_fq62k")
+
 [node name="TeamPoly" type="Polygon2D" parent="TextureRect" unique_id=1000075372]
 position = Vector2(192.00006, 192)
 rotation = -1.5707964
@@ -142,3 +168,37 @@ closed = true
 width = 0.2
 default_color = Color(0.29803923, 0.7254902, 0.26666668, 1)
 antialiased = true
+
+[node name="dot_1" type="Sprite2D" parent="TextureRect/TeamPoly" unique_id=1862395538]
+modulate = Color(0.29803923, 0.7254902, 0.26666668, 1)
+scale = Vector2(0.063, 0.063)
+texture = ExtResource("10_fq62k")
+
+[node name="dot_2" type="Sprite2D" parent="TextureRect/TeamPoly" unique_id=1227849475]
+modulate = Color(0.29803923, 0.7254902, 0.26666668, 1)
+scale = Vector2(0.063, 0.063)
+texture = ExtResource("10_fq62k")
+
+[node name="dot_3" type="Sprite2D" parent="TextureRect/TeamPoly" unique_id=209613737]
+modulate = Color(0.29803923, 0.7254902, 0.26666668, 1)
+scale = Vector2(0.063, 0.063)
+texture = ExtResource("10_fq62k")
+
+[node name="dot_4" type="Sprite2D" parent="TextureRect/TeamPoly" unique_id=1110993901]
+modulate = Color(0.29803923, 0.7254902, 0.26666668, 1)
+scale = Vector2(0.063, 0.063)
+texture = ExtResource("10_fq62k")
+
+[node name="dot_5" type="Sprite2D" parent="TextureRect/TeamPoly" unique_id=1848498444]
+modulate = Color(0.29803923, 0.7254902, 0.26666668, 1)
+scale = Vector2(0.063, 0.063)
+texture = ExtResource("10_fq62k")
+
+[node name="center" type="Node2D" parent="TextureRect" unique_id=1694710739]
+position = Vector2(192, 192)
+rotation = -1.5707964
+scale = Vector2(16, 16)
+
+[node name="Sprite2D" type="Sprite2D" parent="TextureRect/center" unique_id=317021682]
+scale = Vector2(0.063, 0.063)
+texture = ExtResource("10_fq62k")
