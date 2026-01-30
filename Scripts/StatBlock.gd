@@ -1,4 +1,4 @@
-class_name Stats extends Resource
+class_name StatBlock extends Resource
 
 enum Stat {
 	POW,
@@ -19,7 +19,7 @@ enum Stat {
 var _polygon: PackedVector2Array;
 
 
-func get_overlap_area_ratio(other: Stats) -> float:
+func get_overlap_area_ratio(other: StatBlock) -> float:
 	var _a = _to_packedVector2Array();
 	var _b = other._to_packedVector2Array();
 	var _overlap = Geometry2D.intersect_polygons(_a, _b)[0];
@@ -33,7 +33,7 @@ func get_overlap_area_ratio(other: Stats) -> float:
 	return ratio;
 
 
-func get_overlap_with_other(other: Stats) -> PackedVector2Array:
+func get_overlap_with_other(other: StatBlock) -> PackedVector2Array:
 	var _a = _to_packedVector2Array()
 	var _b = other._to_packedVector2Array()
 	var overlap = Geometry2D.intersect_polygons(_a, _b);
@@ -86,3 +86,6 @@ func _get_area(points: PackedVector2Array) -> float:
 	area = (productA - productB) * 0.5
 	
 	return area;
+
+func add_stats(other: StatBlock) -> StatBlock:
+	return other;

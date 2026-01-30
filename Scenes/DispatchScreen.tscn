@@ -23,8 +23,8 @@ characterStats = ExtResource("2_hca7f")
 questStats = ExtResource("3_5n2wf")
 questPoly = NodePath("TextureRect/QuestPoly")
 teamPoly = NodePath("TextureRect/TeamPoly")
-jitterRate = 0.1
-jitterRange = 0.1
+jitterRate = 0.25
+jitterRange = 0.75
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=387817493]
 layout_mode = 1

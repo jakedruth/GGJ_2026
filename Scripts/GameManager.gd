@@ -1,7 +1,7 @@
 extends Node
 
-@export var characterStats: Stats;
-@export var questStats: Stats;
+@export var characterStats: StatBlock;
+@export var questStats: StatBlock;
 @export var questPoly: Polygon2D;
 @export var teamPoly: Polygon2D;
 @export var jitterRate: float;
@@ -18,8 +18,8 @@ var ball_speed: float = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	_set_polygon(questPoly, questStats._to_packedVector2Array());
-	_set_polygon(teamPoly, characterStats._to_packedVector2Array());
+	_set_polygon(questPoly, questStats.get_polygon());
+	_set_polygon(teamPoly, characterStats.get_polygon());
 
 	ball = get_node("TextureRect/center/Sprite2D") as Node2D
 	_reset_ball()
