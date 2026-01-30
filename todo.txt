@@ -1,17 +1,30 @@
 [ ] Comment all existing code
 
 [ ] update the StatBlock object
-	[ ] allow adding stats together for a new stat object (have a limit?)
+	[x] allow adding stats together for a new stat object (have a limit?)
+	[x] get the value of a stat
+	[x] set the value of the stat
+	[ ] generate a unique stat for a character. Will stats carry over otherwise if edited in gameplay??
 
-[ ] Create a task object
-	[ ] set up variables
-		required stats, narration, description (with keywords), number of thieves
+[x] Create a task object
+	[x] set up variables
+		required stats, narration, description (with keywords)
+
+[ ] Create Reward object
+	[ ] holds the rewards like gold, exp, new jobs, etc
 
 [ ] Create a job object - This is an object the holds and handles a task instance
-	[ ] set up varialbes:
-		active timer, location, rewards (Gold, Exp, new jobs), time job is added to the available job pool (???)
-	[ ] Create the states: not active (not started / hidden) -> active -> initiated -> in progress -> summary -> end
+	[x] set up varialbes:
+		task, active timer, location, number of thieves, rewards (Gold, Exp, new jobs), time job is added to the available job pool (???)
+	[x] Create the states: not active (not started / hidden) -> active -> initiated -> in progress -> summary -> end
 		A job can move from active to end (maybe summary) if the timer runs out
+	[ ] Handle each state
+		[x] not active
+		[x] active
+		[ ] initiated
+		[ ] in progress
+		[ ] summary
+		[ ] end
 
 [ ] Create the job system
 	[ ] have a list of all jobs
