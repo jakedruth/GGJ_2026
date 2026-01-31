@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="StatBlock" format=3 uid="uid://dv56gjovmmehd"]
 
-[ext_resource type="Script" uid="uid://ytpjxfbw0q4q" path="res://Scripts/StatBlock.gd" id="1_fsoxb"]
+[ext_resource type="Script" uid="uid://ytpjxfbw0q4q" path="res://Scripts/Stats/StatBlock.gd" id="1_fsoxb"]
 
 [resource]
 script = ExtResource("1_fsoxb")

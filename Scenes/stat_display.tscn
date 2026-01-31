@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://d4jglcjxuyh7h"]
 
-[ext_resource type="Script" uid="uid://c3somt26w8mhu" path="res://Scripts/StatDisplay.gd" id="1_3kb8s"]
+[ext_resource type="Script" uid="uid://c3somt26w8mhu" path="res://Scripts/Stats/StatDisplay.gd" id="1_3kb8s"]
 [ext_resource type="Texture2D" uid="uid://dvxr71hbp4y1e" path="res://Resources/dot_8x8.png" id="2_4prjy"]
 
 [node name="StatDisplay" type="Polygon2D" unique_id=1489969815]

@@ -1,9 +1,9 @@
 [gd_resource type="Resource" script_class="JobPool" format=3 uid="uid://dleonh5mnddpg"]
 
-[ext_resource type="Script" uid="uid://dy21tb473n8xh" path="res://Scripts/Job.gd" id="1_ifi58"]
+[ext_resource type="Script" uid="uid://dy21tb473n8xh" path="res://Scripts/JobSystem/Job.gd" id="1_ifi58"]
 [ext_resource type="Resource" uid="uid://j3mvdk75f0yh" path="res://Resources/Jobs/Job_D01.tres" id="2_ifi58"]
 [ext_resource type="Resource" uid="uid://bhb00uhafwivd" path="res://Resources/Jobs/Job_D02.tres" id="3_fjog1"]
-[ext_resource type="Script" uid="uid://bdnco24ok36h7" path="res://Scripts/JobPool.gd" id="4_7wqeg"]
+[ext_resource type="Script" uid="uid://bdnco24ok36h7" path="res://Scripts/JobSystem/JobPool.gd" id="4_7wqeg"]
 
 [resource]
 script = ExtResource("4_7wqeg")

@@ -1,8 +1,8 @@
 [gd_resource type="Resource" script_class="Job" format=3 uid="uid://dt1bkerg2uooa"]
 
-[ext_resource type="Script" uid="uid://dy21tb473n8xh" path="res://Scripts/Job.gd" id="1_xpwaa"]
-[ext_resource type="Script" uid="uid://ytpjxfbw0q4q" path="res://Scripts/StatBlock.gd" id="2_46cy7"]
-[ext_resource type="Script" uid="uid://bfievxym2tq2y" path="res://Scripts/Task.gd" id="3_corc1"]
+[ext_resource type="Script" uid="uid://dy21tb473n8xh" path="res://Scripts/JobSystem/Job.gd" id="1_xpwaa"]
+[ext_resource type="Script" uid="uid://ytpjxfbw0q4q" path="res://Scripts/Stats/StatBlock.gd" id="2_46cy7"]
+[ext_resource type="Script" uid="uid://bfievxym2tq2y" path="res://Scripts/JobSystem/Task.gd" id="3_corc1"]
 
 [sub_resource type="Resource" id="Resource_iafg6"]
 script = ExtResource("2_46cy7")

@@ -1,11 +1,48 @@
 [gd_scene format=3 uid="uid://88r0k1qvv4ns"]
 
-[ext_resource type="Script" uid="uid://d4ngcndcaqjtg" path="res://Scripts/JobSystem.gd" id="1_jm5b5"]
-[ext_resource type="Script" uid="uid://bdnco24ok36h7" path="res://Scripts/JobPool.gd" id="2_ethpb"]
-[ext_resource type="Resource" uid="uid://dd5iasum5kenl" path="res://Resources/JobPools/JobPool_A.tres" id="3_jx42w"]
-[ext_resource type="Resource" uid="uid://bxfkdyo3th7rd" path="res://Resources/JobPools/JobPool_B.tres" id="4_hglh5"]
-[ext_resource type="Resource" uid="uid://ba81kt3i3et86" path="res://Resources/JobPools/JobPool_C.tres" id="5_sylc6"]
-[ext_resource type="Resource" uid="uid://dleonh5mnddpg" path="res://Resources/JobPools/JobPool_D.tres" id="6_802tq"]
+[sub_resource type="GDScript" id="GDScript_7hrox"]
+script/source = "class_name JobSystem
+extends Control
+
+# Jobs move from all > open > active > removed (not existent) 
+@export var all_job_pools: Array[JobPool]
+@export var active_job_pools: Array[JobPool]
+var active_jobs: Array[Job]
+
+func _process(delta: float) -> void:
+	update(delta)
+
+
+func update(dt: float):
+	if active_job_pools.size() == 0 and all_job_pools.size() > 0:
+		var jobPool = all_job_pools.pop_front()
+		active_job_pools.append(jobPool)
+		print(\"[\", jobPool.resource_path, \"]: Adding to active job pool\")
+
+		if all_job_pools.size() == 1:
+			active_job_pools.append(all_job_pools.pop_front())
+
+	if active_job_pools.size() > 0:
+		for i in range(active_job_pools.size() - 1, -1, -1):
+			var empty: bool = active_job_pools[i].update(self , dt)
+			if empty:
+				print(\"[\", active_job_pools[i].resource_path, \"]: Removing from job pool\")
+				active_job_pools.remove_at(i)
+	else:
+		print(\"No active Job Pools to update\")
+
+	if active_jobs.size() > 0:
+		for i in range(active_jobs.size() - 1, -1, -1):
+			var state: Job.JobState = active_jobs[i].update(dt)
+			if state == Job.JobState.end:
+				print(\"Removing Job\")
+				active_jobs.remove_at(i)
+
+
+func activate_job(job: Job):
+	job.set_state(Job.JobState.active)
+	active_jobs.append(job)
+"
 
 [node name="JobSystem" type="Control" unique_id=682539764]
 layout_mode = 3
@@ -14,5 +51,4 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_jm5b5")
-all_job_pools = Array[ExtResource("2_ethpb")]([ExtResource("3_jx42w"), ExtResource("4_hglh5"), ExtResource("5_sylc6"), ExtResource("6_802tq")])
+script = SubResource("GDScript_7hrox")
