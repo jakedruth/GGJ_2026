@@ -12,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://b0mc8a44wvk4x" path="res://Resources/stats_icons/intelligence-icon.png" id="9_htlc1"]
 [ext_resource type="Texture2D" uid="uid://dvxr71hbp4y1e" path="res://Resources/dot_8x8.png" id="10_fq62k"]
 [ext_resource type="PackedScene" uid="uid://d4jglcjxuyh7h" path="res://Scenes/stat_display.tscn" id="12_htlc1"]
-[ext_resource type="Script" uid="uid://dgg7bjanhpnqk" path="res://Scripts/bouncing_ball.gd" id="13_ajurj"]
+[ext_resource type="Script" uid="uid://dgg7bjanhpnqk" path="res://Scripts/Stats/bouncing_ball.gd" id="13_ajurj"]
 
 [node name="DispatchScreen" type="Control" unique_id=804978114 node_paths=PackedStringArray("job_display", "team_display", "ball")]
 layout_mode = 3
