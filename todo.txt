@@ -11,7 +11,8 @@
 		required stats, narration, description (with keywords)
 
 [ ] Create Reward object
-	[ ] holds the rewards like gold, exp, new jobs, etc
+	[x] holds the rewards like gold, exp, new jobs, etc
+	[ ] intergrate the claim funciton
 
 [ ] Create a job object - This is an object the holds and handles a task instance
 	[x] set up varialbes:
@@ -27,8 +28,8 @@
 		[ ] end
 
 [ ] Create the job system
-	[ ] have a list of all jobs
-	[ ] have a pool of available jobs
+	[x] have a list of all jobs
+	[x] have a pool of available jobs
 	[ ] have a job pop up on screen with a timer before it expires
 	[ ] have a job display the narration and description
 	[ ] allow assigning thieves to the jobs
@@ -45,9 +46,15 @@
 	[ ] this one gets a bit harder to manage
 
 [ ] Make a character - holds and manages a thief instance and abilities
-	[ ] level, experience, stat points, unlocked abilities, art/ mask
+	[ ] name, level, experience, stat points, unlocked abilities, art/ mask
+	[ ] handle if they are busy
 	[ ] handle damage
 	[ ] handle gold
+
+[ ] Create a Team Manager
+	[ ] hold and handles the thieves
+	[ ] add and remove thieves
+	[ ] handle input on selecting a theif
 
 [ ] Create a day system
 	manages everything else

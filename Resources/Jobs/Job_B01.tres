@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="Job" format=3 uid="uid://dvmefn50rkjxv"]
+
+[ext_resource type="Script" uid="uid://dy21tb473n8xh" path="res://Scripts/Job.gd" id="1_kkd7u"]
+[ext_resource type="Script" uid="uid://ytpjxfbw0q4q" path="res://Scripts/StatBlock.gd" id="2_83i17"]
+[ext_resource type="Script" uid="uid://bfievxym2tq2y" path="res://Scripts/Task.gd" id="3_hfwil"]
+
+[sub_resource type="Resource" id="Resource_iafg6"]
+script = ExtResource("2_83i17")
+_data = Dictionary[int, int]({
+0: 1,
+1: 1,
+2: 2,
+3: 5,
+4: 3
+})
+metadata/_custom_type_script = "uid://ytpjxfbw0q4q"
+
+[sub_resource type="Resource" id="Resource_7uf2j"]
+script = ExtResource("3_hfwil")
+required_stats = SubResource("Resource_iafg6")
+narration = "A duke is holding a ball. They have a safe that needs cracking. "
+description = "> The needs to **fit in** at a ball
+> Need to **know** how to crack a safe"
+metadata/_custom_type_script = "uid://bfievxym2tq2y"
+
+[resource]
+script = ExtResource("1_kkd7u")
+task = SubResource("Resource_7uf2j")
+max_theives = 2
+metadata/_custom_type_script = "uid://dy21tb473n8xh"

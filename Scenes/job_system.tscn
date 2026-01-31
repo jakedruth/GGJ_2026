@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://88r0k1qvv4ns"]
+
+[ext_resource type="Script" uid="uid://d4ngcndcaqjtg" path="res://Scripts/JobSystem.gd" id="1_jm5b5"]
+[ext_resource type="Script" uid="uid://bdnco24ok36h7" path="res://Scripts/JobPool.gd" id="2_ethpb"]
+[ext_resource type="Resource" uid="uid://dd5iasum5kenl" path="res://Resources/JobPools/JobPool_A.tres" id="3_jx42w"]
+[ext_resource type="Resource" uid="uid://bxfkdyo3th7rd" path="res://Resources/JobPools/JobPool_B.tres" id="4_hglh5"]
+[ext_resource type="Resource" uid="uid://ba81kt3i3et86" path="res://Resources/JobPools/JobPool_C.tres" id="5_sylc6"]
+[ext_resource type="Resource" uid="uid://dleonh5mnddpg" path="res://Resources/JobPools/JobPool_D.tres" id="6_802tq"]
+
+[node name="JobSystem" type="Control" unique_id=682539764]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jm5b5")
+all_job_pools = Array[ExtResource("2_ethpb")]([ExtResource("3_jx42w"), ExtResource("4_hglh5"), ExtResource("5_sylc6"), ExtResource("6_802tq")])

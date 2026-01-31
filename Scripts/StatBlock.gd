@@ -31,6 +31,7 @@ func get_stat(stat: Stat) -> int:
 # Set a stat
 func set_stat(stat: Stat, value: int) -> void:
 	_data[stat] = value
+	_polygon = _to_packedVector2Array()
 	
 
 # Calculate the percentage of overlap a statblock has on another statblock

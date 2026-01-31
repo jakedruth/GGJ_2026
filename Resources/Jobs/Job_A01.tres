@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="Job" format=3 uid="uid://d0o7nyckkjspt"]
+
+[ext_resource type="Script" uid="uid://dy21tb473n8xh" path="res://Scripts/Job.gd" id="1_qt23a"]
+[ext_resource type="Script" uid="uid://ytpjxfbw0q4q" path="res://Scripts/StatBlock.gd" id="2_l40yf"]
+[ext_resource type="Script" uid="uid://bfievxym2tq2y" path="res://Scripts/Task.gd" id="3_eyfdb"]
+
+[sub_resource type="Resource" id="Resource_40nug"]
+script = ExtResource("2_l40yf")
+_data = Dictionary[int, int]({
+0: 2,
+1: 4,
+2: 4,
+3: 1,
+4: 1
+})
+metadata/_custom_type_script = "uid://ytpjxfbw0q4q"
+
+[sub_resource type="Resource" id="Resource_tn02j"]
+script = ExtResource("3_eyfdb")
+required_stats = SubResource("Resource_40nug")
+narration = "The museum has a necklace I would like. I discovered a tight window in security. I can't have any heat on this otherwise I can't move the good."
+description = "The thief needs to be **Quiet** and not get caught.
+The thief need to be **Quick** "
+metadata/_custom_type_script = "uid://bfievxym2tq2y"
+
+[resource]
+script = ExtResource("1_qt23a")
+task = SubResource("Resource_tn02j")
+metadata/_custom_type_script = "uid://dy21tb473n8xh"

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="JobPool" format=3 uid="uid://bxfkdyo3th7rd"]
+
+[ext_resource type="Script" uid="uid://dy21tb473n8xh" path="res://Scripts/Job.gd" id="1_wm1iw"]
+[ext_resource type="Resource" uid="uid://dvmefn50rkjxv" path="res://Resources/Jobs/Job_B01.tres" id="2_sqhbm"]
+[ext_resource type="Resource" uid="uid://yqcpdt4kg78j" path="res://Resources/Jobs/Job_B02.tres" id="3_rypvw"]
+[ext_resource type="Resource" uid="uid://4cpdr0eya1li" path="res://Resources/Jobs/Job_B03.tres" id="4_p8u8o"]
+[ext_resource type="Script" uid="uid://bdnco24ok36h7" path="res://Scripts/JobPool.gd" id="4_rypvw"]
+[ext_resource type="Resource" uid="uid://dt1bkerg2uooa" path="res://Resources/Jobs/Job_B04.tres" id="5_vqo3n"]
+
+[resource]
+script = ExtResource("4_rypvw")
+jobs = Array[ExtResource("1_wm1iw")]([ExtResource("2_sqhbm"), ExtResource("3_rypvw"), ExtResource("4_p8u8o"), ExtResource("5_vqo3n")])
+metadata/_custom_type_script = "uid://bdnco24ok36h7"
