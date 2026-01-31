@@ -20,7 +20,7 @@ enum Stat {
 }
 
 # A reference to the calculated polygon produced by the stats
-var _polygon: PackedVector2Array;
+var _polygon: PackedVector2Array
 
 
 # Get a stat
@@ -60,40 +60,27 @@ func get_overlap_with_other(other: StatBlock) -> PackedVector2Array:
 # Get the Polygon of the stat block
 func get_polygon() -> PackedVector2Array:
 	if _polygon.size() == 0:
+		print("polygon is size 0")
 		_polygon = _to_packedVector2Array()
 
-	return _polygon.slice(0, _polygon.size())
+	return _polygon.duplicate()
 
 
 # converts the stats to a polygon
 func _to_packedVector2Array() -> PackedVector2Array:
 	const delta = 2 * PI * 0.2
+	const offset = - PI * 0.5
 	var points: PackedVector2Array = [
-		_get_point(_data[Stat.POW], 0 * delta),
-		_get_point(_data[Stat.SNK], 1 * delta),
-		_get_point(_data[Stat.SPD], 2 * delta),
-		_get_point(_data[Stat.CHA], 3 * delta),
-		_get_point(_data[Stat.INT], 4 * delta)];
+		_get_point(_data[Stat.POW], offset + 0 * delta),
+		_get_point(_data[Stat.SNK], offset + 1 * delta),
+		_get_point(_data[Stat.SPD], offset + 2 * delta),
+		_get_point(_data[Stat.CHA], offset + 3 * delta),
+		_get_point(_data[Stat.INT], offset + 4 * delta)];
 	return points
-
-
-# Find the center of the polygon
-func get_center() -> Vector2:
-	var points = _to_packedVector2Array()
-	var center = Vector2.ZERO
-	var size: float = points.size();
-	if points.size() == 0:
-		return center;
-
-	for point in points:
-		center += point / size;
-
-	return center;
 
 
 # Converts a radial coord to cartesian coord
 func _get_point(radius: int, angle: float) -> Vector2:
-	var _offset = PI * 0.25
 	return Vector2(cos(angle), sin(angle)) * radius
 
 

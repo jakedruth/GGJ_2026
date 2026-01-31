@@ -2,9 +2,11 @@ class_name StatDisplay
 extends Polygon2D
 
 @onready var line2D = get_node("Line2D") as Line2D
-var stat_block: StatBlock
+var _stat_block: StatBlock
+var _collision_poly: PackedVector2Array
 
-@export var jitter_offset: float = 0.05
+@export var polygon_scale: float = 16.0
+@export var jitter_offset: float = 1.5
 @export var min_jitter: float = 0.25
 @export var max_jitter: float = 1.0
 var _jitter_timer: float = 0.0
@@ -21,13 +23,13 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if stat_block == null:
+	if _stat_block == null:
 		return
 
 	_jitter_timer -= delta
 	if _jitter_timer <= 0:
 		_jitter_timer = randf_range(min_jitter, max_jitter)
-		var jp: PackedVector2Array = stat_block.get_polygon()
+		var jp: PackedVector2Array = _collision_poly.duplicate()
 		for i in jp.size():
 			var angle = randf_range(0, TAU)
 			jp[i] += Vector2.RIGHT.rotated(angle) * jitter_offset
@@ -39,3 +41,28 @@ func _update_polygon(points: PackedVector2Array):
 	line2D.points = points;
 	for i in points.size():
 		(get_child(i + 1) as Node2D).position = points[i]
+
+	
+func set_stat_block(sb: StatBlock):
+	_stat_block = sb;
+	_collision_poly = sb.get_polygon();
+	for i in _collision_poly.size():
+		_collision_poly[i] *= polygon_scale
+		pass
+
+
+func get_collision() -> PackedVector2Array:
+	return _collision_poly
+
+
+# Find the center of the polygon
+func get_center() -> Vector2:
+	var center = Vector2.ZERO
+	var size: float = _collision_poly.size();
+	if _collision_poly.size() == 0:
+		return center;
+
+	for point in _collision_poly:
+		center += point / size;
+
+	return center;
