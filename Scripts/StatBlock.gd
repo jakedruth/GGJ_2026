@@ -93,6 +93,7 @@ func get_center() -> Vector2:
 
 # Converts a radial coord to cartesian coord
 func _get_point(radius: int, angle: float) -> Vector2:
+	var _offset = PI * 0.25
 	return Vector2(cos(angle), sin(angle)) * radius
 
 

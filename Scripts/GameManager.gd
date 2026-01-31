@@ -1,14 +1,10 @@
 class_name GameManager
 extends Node
 
-@export var characterStats: StatBlock;
-@export var questStats: StatBlock;
-@export var questPoly: Polygon2D;
-@export var teamPoly: Polygon2D;
-@export var jitterRate: float;
-@export var jitterRange: float;
-var _jitterTimerTeam: float = 0;
-var _jitterTimerQuest: float = 0;
+@export var job_stat_block: StatBlock;
+@export var team_stat_block: StatBlock;
+@export var job_display: StatDisplay;
+@export var team_display: StatDisplay;
 
 var startBallMove: bool = false;
 var startDrag: bool = false;
@@ -19,13 +15,13 @@ var ball_speed: float = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	_set_polygon(questPoly, questStats.get_polygon());
-	_set_polygon(teamPoly, characterStats.get_polygon());
+	team_display.stat_block = team_stat_block
+	job_display.stat_block = job_stat_block
 
 	ball = get_node("TextureRect/center/Sprite2D") as Node2D
 	_reset_ball()
 
-	var result = characterStats.get_overlap_area_ratio(questStats)
+	var result = team_stat_block.get_overlap_area_ratio(job_stat_block)
 	print(result);
 
 	pass # Replace with function body.
@@ -33,29 +29,11 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	_jitterTimerQuest += _delta;
-	_jitterTimerTeam += _delta;
-	
-	if (_jitterTimerQuest > jitterRate):
-		_jitterTimerQuest -= jitterRate + randf_range(0, jitterRange)
-		var qp: PackedVector2Array = questStats.get_polygon();
-		for i in qp.size():
-			var angle = randf_range(0, TAU)
-			qp[i] += Vector2.RIGHT.rotated(angle) * 0.05
-		_set_polygon(questPoly, qp)
-	if (_jitterTimerTeam > jitterRate):
-		_jitterTimerTeam -= jitterRate + randf_range(0, jitterRange)
-		var tp: PackedVector2Array = characterStats.get_polygon();
-		for i in tp.size():
-			var angle = randf_range(0, TAU)
-			tp[i] += Vector2.RIGHT.rotated(angle) * 0.05
-		_set_polygon(teamPoly, tp)
-
 	if startBallMove:
-		var poly = questStats.get_polygon();
+		var poly = job_stat_block.get_polygon();
 
 		if not Geometry2D.is_point_in_polygon(ball.position, poly):
-			var center = questStats.get_center();
+			var center = job_stat_block.get_center();
 			ball_move_dir = (center - ball.position).normalized()
 			pass
 
@@ -98,13 +76,6 @@ func _process(_delta: float) -> void:
 
 	pass
 
-func _set_polygon(polygon: Polygon2D, points: PackedVector2Array) -> void:
-	polygon.polygon = points;
-	(polygon.get_child(0) as Line2D).points = points;
-	for i in points.size():
-		(polygon.get_child(i + 1) as Node2D).position = points[i];
-		pass
-
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
@@ -123,7 +94,7 @@ func _input(event: InputEvent) -> void:
 func _reset_ball() -> void:
 	startBallMove = false;
 	startDrag = false;
-	ball.position = questStats.get_center();
+	ball.position = job_stat_block.get_center();
 	ball_move_dir = Vector2.ZERO
 	pass
 
