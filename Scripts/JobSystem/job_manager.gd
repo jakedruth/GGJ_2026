@@ -1,16 +1,23 @@
-class_name JobSystem
+class_name JobManager
 extends Control
 
 # Jobs move from all > open > active > removed (not existent) 
 @export var all_job_pools: Array[JobPool]
 @export var active_job_pools: Array[JobPool]
 var active_jobs: Array[Job]
+var time_multiplier: float = 1
+var time_pause: bool
 
 func _process(delta: float) -> void:
 	update(delta)
 
 
-func update(dt: float):
+func update(delta: float):
+	if time_pause:
+		return
+
+	var dt = delta * time_multiplier
+
 	if active_job_pools.size() == 0 and all_job_pools.size() > 0:
 		var jobPool = all_job_pools.pop_front()
 		active_job_pools.append(jobPool)

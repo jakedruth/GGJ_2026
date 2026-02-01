@@ -11,7 +11,7 @@ var _timer: float = 0.0
 func _init() -> void:
 	_active_rate = randf_range(min_active_rate, max_active_rate)
 
-func update(job_system: JobSystem, dt: float) -> bool:
+func update(job_manager: JobManager, dt: float) -> bool:
 	_timer += dt;
 	if _timer >= _active_rate:
 		print("[", resource_path, "]: activating new job(s)")
@@ -21,5 +21,5 @@ func update(job_system: JobSystem, dt: float) -> bool:
 			if jobs.size() == 0:
 				break
 			var i: int = randi_range(0, jobs.size() - 1)
-			job_system.activate_job(jobs.pop_at(i))
+			job_manager.activate_job(jobs.pop_at(i))
 	return jobs.is_empty()

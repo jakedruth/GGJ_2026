@@ -46,10 +46,10 @@
 	[ ] this one gets a bit harder to manage
 
 [ ] Make a character - holds and manages a thief instance and abilities
-	[X] name, level, experience, stat points, unlocked abilities, art/ mask
-	[ ] handle if they are busy
-	[ ] handle damage
-	[ ] handle gold
+	[x] name, level, experience, stat points, unlocked abilities, art/ mask
+	[x] handle if they are busy
+	[x] handle damage
+	[x] handle gold
 
 [ ] Create a Team Manager
 	[ ] hold and handles the thieves
