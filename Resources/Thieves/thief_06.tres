@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="Thief" format=3 uid="uid://cocm255nbcfce"]
+
+[ext_resource type="Script" uid="uid://3eow750u7o47" path="res://Scripts/Thieves/ability.gd" id="1_c1q07"]
+[ext_resource type="Texture2D" uid="uid://ccrrwmhkbgyo3" path="res://Resources/Masks/tribal.png" id="2_c1q07"]
+[ext_resource type="Script" uid="uid://bk7ko22ww1ya6" path="res://Scripts/Thieves/thief.gd" id="3_ysf3u"]
+[ext_resource type="Script" uid="uid://ytpjxfbw0q4q" path="res://Scripts/Stats/StatBlock.gd" id="4_urr4y"]
+
+[sub_resource type="Resource" id="Resource_68lkj"]
+script = ExtResource("4_urr4y")
+_data = Dictionary[int, int]({
+0: 4,
+1: 2,
+2: 4,
+3: 1,
+4: 2
+})
+metadata/_custom_type_script = "uid://ytpjxfbw0q4q"
+
+[resource]
+script = ExtResource("3_ysf3u")
+name = "Tribal"
+stat_block = SubResource("Resource_68lkj")
+mask = ExtResource("2_c1q07")
+color = Color(0.42745098, 0.19607843, 0.42745098, 1)
+metadata/_custom_type_script = "uid://bk7ko22ww1ya6"

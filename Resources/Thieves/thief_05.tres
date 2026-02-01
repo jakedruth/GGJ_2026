@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="Thief" format=3 uid="uid://cuft1exrd1q5u"]
+
+[ext_resource type="Script" uid="uid://3eow750u7o47" path="res://Scripts/Thieves/ability.gd" id="1_pm8br"]
+[ext_resource type="Texture2D" uid="uid://csr6bna7dk1h6" path="res://Resources/Masks/hooded.png" id="2_pm8br"]
+[ext_resource type="Script" uid="uid://bk7ko22ww1ya6" path="res://Scripts/Thieves/thief.gd" id="3_i0qbl"]
+[ext_resource type="Script" uid="uid://ytpjxfbw0q4q" path="res://Scripts/Stats/StatBlock.gd" id="4_hgk4v"]
+
+[sub_resource type="Resource" id="Resource_xf3dm"]
+script = ExtResource("4_hgk4v")
+_data = Dictionary[int, int]({
+0: 2,
+1: 5,
+2: 2,
+3: 1,
+4: 3
+})
+metadata/_custom_type_script = "uid://ytpjxfbw0q4q"
+
+[resource]
+script = ExtResource("3_i0qbl")
+name = "Hooded"
+stat_block = SubResource("Resource_xf3dm")
+mask = ExtResource("2_pm8br")
+color = Color(0.101960786, 0.56078434, 0.8901961, 1)
+metadata/_custom_type_script = "uid://bk7ko22ww1ya6"

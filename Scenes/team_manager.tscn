@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://bsb45ov0ysiv7"]
+
+[ext_resource type="Script" uid="uid://wveyl4bfsy7t" path="res://Scripts/Thieves/team_manager.gd" id="1_awtw4"]
+[ext_resource type="Script" uid="uid://bk7ko22ww1ya6" path="res://Scripts/Thieves/thief.gd" id="2_msw7k"]
+[ext_resource type="PackedScene" uid="uid://cl1or1sr7x46y" path="res://Scenes/thief_mini_display.tscn" id="2_t8gj6"]
+[ext_resource type="Resource" uid="uid://cwlejqvkmhrle" path="res://Resources/Thieves/thief_01.tres" id="3_grd5n"]
+[ext_resource type="Resource" uid="uid://dsq18m5yihy12" path="res://Resources/Thieves/thief_02.tres" id="4_msw7k"]
+[ext_resource type="Resource" uid="uid://hw457km2xbuf" path="res://Resources/Thieves/thief_03.tres" id="5_1n68r"]
+[ext_resource type="Resource" uid="uid://cmmlev1k50nf1" path="res://Resources/Thieves/thief_04.tres" id="6_osgt1"]
+[ext_resource type="Resource" uid="uid://cuft1exrd1q5u" path="res://Resources/Thieves/thief_05.tres" id="7_ipoxp"]
+[ext_resource type="Resource" uid="uid://cocm255nbcfce" path="res://Resources/Thieves/thief_06.tres" id="8_38pys"]
+
+[node name="TeamManager" type="Control" unique_id=1562172825 node_paths=PackedStringArray("h_box")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_awtw4")
+team = Array[ExtResource("2_msw7k")]([ExtResource("3_grd5n"), ExtResource("4_msw7k"), ExtResource("5_1n68r"), ExtResource("6_osgt1"), ExtResource("7_ipoxp"), ExtResource("8_38pys")])
+h_box = NodePath("PanelContainer/MarginContainer/HBoxContainer")
+thief_display = ExtResource("2_t8gj6")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1565622356]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -200.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=2110712907]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer" unique_id=731983571]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1

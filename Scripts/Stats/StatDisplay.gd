@@ -48,7 +48,7 @@ func set_stat_block(sb: StatBlock):
 	_collision_poly = sb.get_polygon();
 	for i in _collision_poly.size():
 		_collision_poly[i] *= polygon_scale
-		pass
+	_update_polygon(_collision_poly)
 
 
 func get_collision() -> PackedVector2Array:

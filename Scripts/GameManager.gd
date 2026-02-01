@@ -35,5 +35,6 @@ func _input(event: InputEvent) -> void:
 		elif event.button_index == 3: # Middle Click
 			ball.startDrag = true
 			pass
-		
-	pass
+
+func set_current_team(team: StatBlock):
+	team_display.set_stat_block(team)

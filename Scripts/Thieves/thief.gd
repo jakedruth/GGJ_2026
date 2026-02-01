@@ -25,6 +25,7 @@ enum WorkState {
 @export var stat_block: StatBlock
 @export var abilities: Array[Ability]
 @export var mask: Texture2D
+@export var color: Color = Color.RED
 
 var _health_state: HealthState = HealthState.healthy
 var _work_state: WorkState = WorkState.ready

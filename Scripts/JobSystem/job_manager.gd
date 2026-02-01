@@ -32,8 +32,8 @@ func update(delta: float):
 			if empty:
 				print("[", active_job_pools[i].resource_path, "]: Removing from job pool")
 				active_job_pools.remove_at(i)
-	else:
-		print("No active Job Pools to update")
+	# else:
+	# 	print("No active Job Pools to update")
 
 	if active_jobs.size() > 0:
 		for i in range(active_jobs.size() - 1, -1, -1):

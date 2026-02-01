@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://cl1or1sr7x46y"]
+
+[ext_resource type="Script" uid="uid://c5gqergbn80k4" path="res://Scripts/Thieves/thief_mini_display.gd" id="1_smfx5"]
+[ext_resource type="Texture2D" uid="uid://bycg0omv6uw0w" path="res://Resources/Masks/brawler.png" id="1_w2auy"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t8gj6"]
+bg_color = Color(0.8627451, 0.49019608, 0.23921569, 0.6156863)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.8627451, 0.49019608, 0.23921569, 1)
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="ThiefMiniDisplay" type="Button" unique_id=1588784213 node_paths=PackedStringArray("mask_texture2D", "name_label", "work_panel", "work_label")]
+custom_minimum_size = Vector2(150, 0)
+script = ExtResource("1_smfx5")
+mask_texture2D = NodePath("VBoxContainer/Mask")
+name_label = NodePath("VBoxContainer/NameLabel")
+work_panel = NodePath("VBoxContainer/Mask/WorkPanel")
+work_label = NodePath("VBoxContainer/Mask/WorkPanel/WorkLabel")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=907331150]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Mask" type="TextureRect" parent="VBoxContainer" unique_id=1013396324]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+texture = ExtResource("1_w2auy")
+expand_mode = 4
+
+[node name="WorkPanel" type="PanelContainer" parent="VBoxContainer/Mask" unique_id=1069116187]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_t8gj6")
+
+[node name="WorkLabel" type="Label" parent="VBoxContainer/Mask/WorkPanel" unique_id=1690318985]
+layout_mode = 2
+text = "BUSY"
+horizontal_alignment = 1
+
+[node name="NameLabel" type="Label" parent="VBoxContainer" unique_id=1068227807]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 24
+text = "Brawler"
+horizontal_alignment = 1

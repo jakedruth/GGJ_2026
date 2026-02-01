@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="Thief" format=3 uid="uid://cwlejqvkmhrle"]
+
+[ext_resource type="Script" uid="uid://3eow750u7o47" path="res://Scripts/Thieves/ability.gd" id="1_f6etm"]
+[ext_resource type="Texture2D" uid="uid://bycg0omv6uw0w" path="res://Resources/Masks/brawler.png" id="2_2spe7"]
+[ext_resource type="Script" uid="uid://bk7ko22ww1ya6" path="res://Scripts/Thieves/thief.gd" id="2_7wyx4"]
+[ext_resource type="Script" uid="uid://ytpjxfbw0q4q" path="res://Scripts/Stats/StatBlock.gd" id="4_85o31"]
+
+[sub_resource type="Resource" id="Resource_2spe7"]
+script = ExtResource("4_85o31")
+_data = Dictionary[int, int]({
+0: 5,
+1: 1,
+2: 3,
+3: 2,
+4: 2
+})
+metadata/_custom_type_script = "uid://ytpjxfbw0q4q"
+
+[resource]
+script = ExtResource("2_7wyx4")
+name = "Brawler"
+stat_block = SubResource("Resource_2spe7")
+mask = ExtResource("2_2spe7")
+color = Color(0.7529412, 0.24313726, 0.22352941, 1)
+metadata/_custom_type_script = "uid://bk7ko22ww1ya6"

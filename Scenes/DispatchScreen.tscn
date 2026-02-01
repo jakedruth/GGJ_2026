@@ -5,6 +5,7 @@
 [ext_resource type="Resource" uid="uid://l4aqudaqw4mi" path="res://Resources/quest_01.tres" id="3_5n2wf"]
 [ext_resource type="Texture2D" uid="uid://cidnjllc3u272" path="res://Resources/Pentagram.png" id="4_5n2wf"]
 [ext_resource type="PackedScene" uid="uid://88r0k1qvv4ns" path="res://Scenes/job_system.tscn" id="4_lom48"]
+[ext_resource type="PackedScene" uid="uid://bsb45ov0ysiv7" path="res://Scenes/team_manager.tscn" id="5_m6x7h"]
 [ext_resource type="Texture2D" uid="uid://baiwwwmn6ncoj" path="res://Resources/stats_icons/power-icon.png" id="5_mm37g"]
 [ext_resource type="Texture2D" uid="uid://ywkcspgwaof6" path="res://Resources/stats_icons/stealth-icon.png" id="6_8nqku"]
 [ext_resource type="Texture2D" uid="uid://ducskejc4sjn" path="res://Resources/stats_icons/speed-icon.png" id="7_fq62k"]
@@ -29,6 +30,9 @@ team_display = NodePath("TextureRect/center/TeamDisplay")
 ball = NodePath("TextureRect/center/Ball")
 
 [node name="JobSystem" parent="." unique_id=682539764 instance=ExtResource("4_lom48")]
+layout_mode = 1
+
+[node name="TeamManager" parent="." unique_id=1562172825 instance=ExtResource("5_m6x7h")]
 layout_mode = 1
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=387817493]

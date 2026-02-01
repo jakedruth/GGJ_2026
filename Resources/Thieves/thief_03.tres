@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="Thief" format=3 uid="uid://hw457km2xbuf"]
+
+[ext_resource type="Script" uid="uid://3eow750u7o47" path="res://Scripts/Thieves/ability.gd" id="1_1jwlf"]
+[ext_resource type="Texture2D" uid="uid://hoeps7ekl7ad" path="res://Resources/Masks/duality.png" id="2_1jwlf"]
+[ext_resource type="Script" uid="uid://bk7ko22ww1ya6" path="res://Scripts/Thieves/thief.gd" id="3_xrpxo"]
+[ext_resource type="Script" uid="uid://ytpjxfbw0q4q" path="res://Scripts/Stats/StatBlock.gd" id="4_2abuy"]
+
+[sub_resource type="Resource" id="Resource_gtck3"]
+script = ExtResource("4_2abuy")
+_data = Dictionary[int, int]({
+0: 1,
+1: 2,
+2: 3,
+3: 5,
+4: 2
+})
+metadata/_custom_type_script = "uid://ytpjxfbw0q4q"
+
+[resource]
+script = ExtResource("3_xrpxo")
+name = "Duality"
+stat_block = SubResource("Resource_gtck3")
+mask = ExtResource("2_1jwlf")
+color = Color(0.9411765, 0.8627451, 0.28235295, 1)
+metadata/_custom_type_script = "uid://bk7ko22ww1ya6"
