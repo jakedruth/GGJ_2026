@@ -46,7 +46,7 @@
 	[ ] this one gets a bit harder to manage
 
 [ ] Make a character - holds and manages a thief instance and abilities
-	[ ] name, level, experience, stat points, unlocked abilities, art/ mask
+	[X] name, level, experience, stat points, unlocked abilities, art/ mask
 	[ ] handle if they are busy
 	[ ] handle damage
 	[ ] handle gold

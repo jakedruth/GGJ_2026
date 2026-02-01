@@ -4,13 +4,14 @@
 [ext_resource type="Texture2D" uid="uid://dvxr71hbp4y1e" path="res://Resources/dot_8x8.png" id="2_4prjy"]
 
 [node name="StatDisplay" type="Polygon2D" unique_id=1489969815]
-polygon = PackedVector2Array(1, 0, 0.31, 0.95, -0.81, 0.59, -0.81, -0.59, 0.31, -0.95)
+polygon = PackedVector2Array(16, 0, 4.96, 15.2, -12.96, 9.44, -12.96, -9.44, 4.96, -15.2)
 script = ExtResource("1_3kb8s")
 
 [node name="Line2D" type="Line2D" parent="." unique_id=2079282061]
-points = PackedVector2Array(1, 0, 0.31, 0.95, -0.81, 0.59, -0.81, -0.59, 0.31, -0.95)
+points = PackedVector2Array(16, 0, 4.96, 15.2, -12.96, 9.44, -12.96, -9.44, 4.96, -15.2)
 closed = true
 width = 3.2
+default_color = Color(0.52312034, 0.5231203, 0.5231203, 1)
 antialiased = true
 
 [node name="dot_1" type="Sprite2D" parent="." unique_id=183506221]
